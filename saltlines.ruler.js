@@ -125,6 +125,13 @@ function getAllUnits() {
 }
 
 // this function allows calling functions just by prepending a + sign.
+// the urnary operator '+' is used by JavaScript to 'try' to convert things into numbers - but
+// they are only converted if the item has a key valueOf...so, of course we have to modify the
+// Function.prototype.valueOf() method so that calling a function like this
+// +s.unitList
+// will return the result of that function by just calling it simply with this.call().
+// I actually don't know if this will cause conflicts with other things and it's definitely just
+// meant to create syntactic sugar.
 Function.prototype.valueOf = function() {
   this.call(this);
   return 0;
