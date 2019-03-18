@@ -68,4 +68,8 @@ then the `ruler` object will be updated permanently. also worth noting that if y
   <dd>
   if you want to contribute more units conversions, more functions to do useful calculations, or any cool additions that you think might fit this project, please don't hesitate to hit that pull request button!
   </dd>
+  <dt>be warned!</dt>
+  <dd>
+  this utility may not work in Internet Explorer or if you can't use ES6! I also have not tested its behavior in Safari!
+  </dd>
 </dl>
