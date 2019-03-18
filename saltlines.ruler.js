@@ -18,7 +18,7 @@ const pythagorean = (a, b) => {
 // call methods individually with 'new s.functionName'.
 // when calling these methods in this way (like a constructor),
 // the ruler object will be destructively(?) updated.
-const s = {
+const saltlines = s = {
   viewPortUnits: function() {
     vh = window.innerHeight;
     vw = window.innerWidth;
