@@ -34,7 +34,7 @@ to get a list of all included units, please type this into your console:
 +s.unitList
 ```
 
-it logs a (pretty!) list of all units available.
+it logs a list of all units available.
 
 ### other usage
 if you need to manually update a set of values, or get just one set of values, or anything like that, then you can call an individual method within `saltlines` (s) similar to a constructor.
