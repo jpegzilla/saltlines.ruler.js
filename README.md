@@ -28,6 +28,8 @@ let my_vh_var = r.one_vh;
 let my_vw_var = r.one_vw;
 ```
 
+**important:** all viewport units and window-related measurements (found in `new s.viewPortUnits` and `new s.windowSizes`) are returned in pixels, and dynamically update when the window size changes. please use them as pixel values.  
+
 to get a list of all included units, please type this into your console:
 
 ```javascript
@@ -68,6 +70,7 @@ then the `ruler` object will be updated permanently. also worth noting that if y
   <dd>
   if you want to contribute more units conversions, more functions to do useful calculations, or any cool additions that you think might fit this project, please don't hesitate to hit that pull request button!
   </dd>
+  <br>
   <dt>be warned!</dt>
   <dd>
   this utility may not work in Internet Explorer or if you can't use ES6! I also have not tested its behavior in Safari! also there's a kind of screwy `Function.prototype` method hack that doesn't really serve a purpose. you'll know when you see it. it looks cool though
