@@ -70,6 +70,6 @@ then the `ruler` object will be updated permanently. also worth noting that if y
   </dd>
   <dt>be warned!</dt>
   <dd>
-  this utility may not work in Internet Explorer or if you can't use ES6! I also have not tested its behavior in Safari!
+  this utility may not work in Internet Explorer or if you can't use ES6! I also have not tested its behavior in Safari! also there's a kind of screwy `Function.prototype` method hack that doesn't really serve a purpose. you'll know when you see it. it looks cool though
   </dd>
 </dl>
