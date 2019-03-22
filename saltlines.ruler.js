@@ -4,7 +4,7 @@
 // initially created by jpegzilla, on March 18th, 2019.
 
 // create variables for all units we'll define
-let vh, vw, vmin, vmax, ch, pc, em, rem, inch, cm, ppi, diag;
+let vh, vw, vmin, vmax, ch, pc, em, rem, inch, cm, ppi, diag, aspectRatio;
 vh = window.innerHeight;
 vw = window.innerWidth;
 
@@ -13,6 +13,17 @@ let ruler = r = {};
 
 // create a function to do the pythagorean theorem for me
 const py = (a, b) => { return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2)) };
+
+// create a function to reduce fractions for me
+const reduce = (f) => {
+  for (var i = f[0]; i > 0; i--) {
+    if (0 == f[0] % i && 0 == f[1] % i) {
+      var n = (f[0] / i);
+      var d = (f[1] / i);
+      return { n, d };
+    }
+  }
+}
 
 // method definitions for generating units
 // call methods individually with 'new s.functionName'.
@@ -53,9 +64,15 @@ const saltlines = s = {
     var fullHeight = ruler.fullHeight = screen.height;
     var windowWidth = ruler.windowWidth = window.innerWidth;
     var windowHeight = ruler.windowHeight = window.innerHeight;
-    var windowDiag = ruler.windowDiag = py(windowWidth, windowHeight);
+    var windowDiag = py(windowWidth, windowHeight);
+    windowDiag = windowDiag.toFixed(2);
+    ruler.windowDiag = Number(windowDiag);
 
-    return { fullWidth, fullHeight, windowWidth, windowHeight, windowDiag }
+    aspectRatio = reduce([fullWidth, fullHeight]);
+    ruler.aspectRatio = `${aspectRatio.n}:${aspectRatio.d}`;
+    console.log(ruler.aspectRatio);
+
+    return { fullWidth, fullHeight, windowWidth, windowHeight, windowDiag, aspectRatio }
   },
 
   physicalUnits: function() {
@@ -75,7 +92,9 @@ const saltlines = s = {
     var inchWidth = fullWidth / ppix;
     inchWidth = inchWidth.toFixed(2);
     inchWidth = ruler.inchWidth = Number(inchWidth);
-    var pt = ruler.pt = ppix / 72;
+    var pt = ppix / 72;
+    pt = pt.toFixed(2);
+    ruler.pt = Number(pt);
     var pc = ruler.pc = pt * 12;
 
     return { inchHeight, inchWidth, ppix, pt, pc };
