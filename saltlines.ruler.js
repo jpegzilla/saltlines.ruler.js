@@ -70,7 +70,6 @@ const saltlines = s = {
 
     aspectRatio = reduce([fullWidth, fullHeight]);
     ruler.aspectRatio = `${aspectRatio.n}:${aspectRatio.d}`;
-    console.log(ruler.aspectRatio);
 
     return { fullWidth, fullHeight, windowWidth, windowHeight, windowDiag, aspectRatio }
   },
@@ -96,7 +95,7 @@ const saltlines = s = {
     pt = pt.toFixed(2);
     ruler.pt = Number(pt);
     var pc = ruler.pc = pt * 12;
-
+    document.body.removeChild(newDiv);
     return { inchHeight, inchWidth, ppix, pt, pc };
   },
 
